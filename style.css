@@ -9,8 +9,13 @@ body {
   align-items: center;
   background-color: rgb(0, 0, 0);
   height: 7vh;
-  position: relative; /* Necessary for absolute positioning of mobile menu */
-  /* border: 2px solid white; */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+#logo {
+  height: 5vh;
+  margin-left: 20px;
 }
 #FLy {
   color: rgb(168, 129, 0);
@@ -31,7 +36,9 @@ body {
 
 .box2 {
   /* border: 2px solid white; */
-  width: 13vw;
+  width: 10vw;
+  margin-right: auto;
+  margin-left: -4vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,14 +63,13 @@ body {
   font-family: "Lucida Sans", sans-serif;
 }
 
-
 /* --- Hamburger Logic --- */
 #check {
-  display: none; /* Hide the actual checkbox */
+  display: none;
 }
 
 .hamburger {
-  display: none; /* Hide hamburger on desktop */
+  display: none;
   flex-direction: column;
   justify-content: space-around;
   width: 30px;
@@ -81,151 +87,160 @@ body {
   border-radius: 2px;
 }
 
-/* --- The Main Section (Background) --- */
 .main {
-    height: 93vh;
-    background-image: url("anders-jilden-cYrMQA7a3Wc-unsplash.jpg");
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 93vh;
+  background-image: url("anders-jilden-cYrMQA7a3Wc-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* --- The Glass Box (Newspaper Container) --- */
 .hero-ad-box {
-    width: 40%; /* Slightly wider for newspaper layout */
-    padding: 50px;
-    display: flex;
-    align-items: flex-start;
-    gap: 40px;
-    position: relative;
-    overflow: hidden;
+  width: 40%;
+  padding: 50px;
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  position: relative;
+  overflow: hidden;
 
-    /* Glassmorphism Effect */
-    background: rgba(255, 255, 255, 0.1); 
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
 }
 
-/* --- Left Side: Massive Discount --- */
 .discount-badge {
-    font-size: 8rem;
-    font-weight: 900;
-    color: #ffffff; /* Emirates Red */
-    line-height: 0.8;
-    text-align: center;
-    border-right: 3px solid rgba(255, 255, 255, 0.3);
-    padding-right: 30px;
-    flex-shrink: 0;
+  font-size: 8rem;
+  font-weight: 900;
+  color: #ffffff;
+  line-height: 0.8;
+  text-align: center;
+  border-right: 3px solid rgba(255, 255, 255, 0.3);
+  padding-right: 30px;
+  flex-shrink: 0;
 }
 
 .discount-badge small {
-    display: block;
-    font-size: 4vh;
-    font-weight: bold;
-    letter-spacing: 8px;
-    color: rgb(255, 0, 0);
-    margin-top: 40px;
+  display: block;
+  font-size: 4vh;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: rgb(255, 0, 0);
+  margin-top: 40px;
 }
 
-/* --- Right Side: Content --- */
 .headline-text {
-    text-align: left;
-    color: white;
+  text-align: left;
+  color: white;
 }
 
 .headline-text h1 {
-    font-size: 2.8rem;
-    margin: 0;
-    text-transform: uppercase;
-    font-weight: 800;
-    line-height: 1;
+  font-size: 2.8rem;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 800;
+  line-height: 1;
 }
 
 #offer {
-    font-size: 1.5rem;
-    font-weight: bolder;
-    text-decoration: none;
-    color: #ffffff; /* Emirates Gold */
-    margin: 15px 0;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    display: inline-block;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: #ffffff; /* Emirates Gold */
+  margin: 15px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
 }
 
 .headline-text p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 25px;
-    color: #eee;
-    max-width: 450px;
-    font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #eee;
+  max-width: 450px;
+  font-weight: bold;
 }
 
-/* --- The Button --- */
 .hero-btn {
-    background-color: #D71921;
-    color: white;
-    border: none;
-    padding: 14px 35px;
-    font-weight: bold;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: 0.3s ease;
+  background-color: #d71921;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .hero-btn:hover {
-    background-color: white;
-    color: #D71921;
-    transform: translateY(-2px);
+  background-color: white;
+  color: #d71921;
+  transform: translateY(-2px);
 }
 
-/* --- Side Fine Print --- */
 .fine-print {
-    position: absolute;
-    bottom: 20px;
-    right: -25px;
-    transform: rotate(-90deg);
-    font-size: 0.6rem;
-    color: rgba(255, 255, 255, 0.5);
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  position: absolute;
+  bottom: 20px;
+  right: -25px;
+  transform: rotate(-90deg);
+  font-size: 0.6rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 /* --- Mobile Responsive --- */
 @media (max-width: 900px) {
-    .hero-ad-box {
-        width: 90%;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 30px;
-    }
-    .discount-badge {
-        border-right: none;
-        border-bottom: 3px solid rgba(255, 255, 255, 0.3);
-        padding-right: 0;
-        padding-bottom: 20px;
-        font-size: 6rem;
-    }
-    .headline-text {
-        text-align: center;
-    }
-    .fine-print {
-        display: none;
-    }
+  .hero-ad-box {
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .discount-badge {
+    border-right: none;
+    border-bottom: 3px solid rgba(255, 255, 255, 0.3);
+    padding-right: 0;
+    padding-bottom: 20px;
+    font-size: 6rem;
+  }
+  .headline-text {
+    text-align: center;
+  }
+  .fine-print {
+    display: none;
+  }
 }
 
 /* --- Responsive (Mobile) --- */
 @media (max-width: 768px) {
   .hamburger {
     display: flex; /* Show hamburger only on mobile */
+    order: 1; /* First (Left) */
+    margin-right: 100px;
   }
 
+  
+
+  #logo {
+    order: 2; /* Second (Middle) */
+  }
+  .box1{
+    order: 4;
+  }
+
+  #Fly {
+    order: 3; /* Third (Right) */
+    margin-right: auto; /* This pushes everything else to the far right if needed */
+  }
   .box1 {
     width: auto;
   }
@@ -244,7 +259,9 @@ body {
     gap: 20px;
     z-index: 99;
   }
-
+  .navig {
+    position: relative;
+  }
   /* Show menu when checkbox is clicked */
   #check:checked ~ .box1 ul {
     display: flex;
@@ -253,269 +270,272 @@ body {
   /* Adjust box2 and box3 for mobile layout */
   .box2 {
     width: auto;
+    margin-left: 10px;
   }
   .box3 {
     display: none;
   }
 }
 
-
-/* --- Features Section --- */
 .features-section {
-    padding: 80px 20px;
-    background-color: #f8f9fa;
+  padding: 80px 20px;
+  background-color: #f8f9fa;
 }
 
 .section-title {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 50px;
-    color: #333;
-    font-family: "Lucida Sans", sans-serif;
-    font-weight: bold;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 50px;
+  color: #333;
+  font-family: "Lucida Sans", sans-serif;
+  font-weight: bold;
 }
 
 .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .feature-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 12px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
 .feature-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
+  font-size: 4rem;
+  margin-bottom: 20px;
 }
 
 .feature-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
-    color: #333;
-    font-family: "Lucida Sans", sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #333;
+  font-family: "Lucida Sans", sans-serif;
 }
 
 .feature-card p {
-    color: #666;
-    line-height: 1.6;
-    font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+  font-size: 1rem;
 }
 
-/* --- Pricing Section --- */
 .pricing-section {
-    padding: 80px 20px;
-    background-color: #1a1a1a;
+  padding: 80px 20px;
+  background-color: #1a1a1a;
 }
 
 .pricing-section .section-title {
-    color: white;
+  color: white;
 }
 
 .pricing-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    max-width: 1000px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .pricing-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 15px;
-    width: 350px;
-    position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 40px 30px;
+  border-radius: 15px;
+  width: 350px;
+  position: relative;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
 .pricing-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
 .pricing-card.premium {
-    background: linear-gradient(155deg, #ffc400 80%, #661010 20%);
-    color: rgb(0, 0, 0);
-    box-shadow: 0 15px 40px rgba(228, 231, 245, 0.4);
+  background: linear-gradient(155deg, #ffc400 80%, #661010 20%);
+  color: rgb(0, 0, 0);
+  box-shadow: 0 15px 40px rgba(228, 231, 245, 0.4);
 }
 
 .pricing-card.premium:hover {
-    box-shadow: 0 20px 50px rgba(196, 196, 197, 0.6);
+  box-shadow: 0 20px 50px rgba(196, 196, 197, 0.6);
 }
 
 .recommended-badge {
-    position: absolute;
-    top: -15px;
-    right: 20px;
-    background: #D71921;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    text-transform: uppercase;
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  background: #d71921;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .plan-name {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-    font-family: "Lucida Sans", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  font-family: "Lucida Sans", sans-serif;
 }
 
 .price {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 30px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .currency {
-    font-size: 1.5rem;
-    margin-right: 5px;
+  font-size: 1.5rem;
+  margin-right: 5px;
 }
 
 .features-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 30px;
-    text-align: left;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
 }
 
 .features-list li {
-    padding: 12px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    font-size: 1rem;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
 }
 
 .pricing-card.premium .features-list li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .pricing-btn {
-    width: 100%;
-    padding: 15px;
-    background-color: #333;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-transform: uppercase;
+  width: 100%;
+  padding: 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+  text-transform: uppercase;
 }
 
 .pricing-btn:hover {
-    background-color: #D71921;
-    transform: scale(1.05);
+  background-color: #d71921;
+  transform: scale(1.05);
 }
 
 .premium-btn {
-    background-color: white;
-    color: #667eea;
+  background-color: white;
+  color: #667eea;
 }
 
 .premium-btn:hover {
-    background-color: #D71921;
-    color: white;
+  background-color: #d71921;
+  color: white;
 }
 
 /* --- Footer --- */
 .footer {
-    background-color: #000;
-    color: white;
-    padding: 60px 20px 20px;
-    font-family: "Lucida Sans", sans-serif;
+  background-color: #000;
+  color: white;
+  padding: 60px 20px 20px;
+  font-family: "Lucida Sans", sans-serif;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
 }
 
 .footer-column h4 {
-    color: rgb(168, 129, 0);
-    margin-bottom: 20px;
-    font-size: 1.3rem;
+  color: rgb(168, 129, 0);
+  margin-bottom: 20px;
+  font-size: 1.3rem;
 }
 
 .footer-column p {
-    margin: 10px 0;
-    color: #ccc;
+  margin: 10px 0;
+  color: #ccc;
 }
 
 .social-links {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .social-links a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: rgb(168, 129, 0);
+  color: rgb(168, 129, 0);
 }
 
 .trust-badges p {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
 .footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    color: #888;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888;
 }
 
-/* --- Responsive (Features) --- */
 @media (max-width: 768px) {
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .pricing-container {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .pricing-card {
-        width: 90%;
-        max-width: 400px;
-    }
-    
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        text-align: center;
-    }
-    
-    .social-links {
-        align-items: center;
-    }
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .pricing-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .social-links {
+    align-items: center;
+  }
 }
